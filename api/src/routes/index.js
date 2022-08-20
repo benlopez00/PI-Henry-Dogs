@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const { Dog, Temperament } = require("../db");
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -11,10 +12,9 @@ const router = Router();
 
 //Traer datos de la api
 const getDataApi = async () => {
-    const api = await fetch(
-        "https://api.thedogapi.com/v1/breeds"
-    );
-    const apiInfo = await api.data.map((e) => {
+    const api = await fetch("https://api.thedogapi.com/v1/breeds");
+    const apiInfo = await api.json();
+    return apiInfo.map((e) => {
         return {
             id: e.id,
             image: e.image.url,
@@ -25,11 +25,10 @@ const getDataApi = async () => {
             life_span: e.life_span,
         };
     });
-    return apiInfo;
 };
 
 //Traer datos de la base de datos
-const getBd = async () => {
+const getDataBase = async () => {
     return await Dog.findAll({
         include: {
             model: Temperament,
@@ -42,13 +41,28 @@ const getBd = async () => {
 };
 
 
-const getBreeds = async () => {
+const getInfoDogs = async () => {
     const apiInfo = await getDataApi();
-    const bdInfo = await getBd();
+    const bdInfo = await getDataBase();
     const allInfo = apiInfo.concat(bdInfo);
     return allInfo;
 };
 
+
+
+router.get("/dogs", async (req, res) => {
+    const { name } = req.query;
+    const allBreeds = await getInfoDogs();
+    if (!name) {
+        res.status(200).json(allBreeds);
+    } else {
+        const filtrados = allBreeds.filter((e) => {
+            const listName = e.name.toUpperCase();
+            if (listName.includes(name.toUpperCase())) return listName;
+        });
+        filtrados.length ? res.status(200).json(filtrados) : res.status(400).send("Raza no encontrada");
+    }
+});
 
 
 module.exports = router;
