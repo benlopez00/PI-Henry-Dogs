@@ -87,7 +87,7 @@ router.get('/temperaments', async (req, res)=>{
 
 
 
-/*
+
 router.post('/dogs', async (req, res) => {
     var { // takes these properties to build the new dog
         name,
@@ -121,34 +121,6 @@ router.post('/dogs', async (req, res) => {
     } else {
         res.status(404).send('Data needed to proceed is missing');
     }
-})*/
-
-router.post("/dogs", async (req, res) => {
-    const {
-        name,
-        height_min,
-        height_max,
-        weight_min,
-        weight_max,
-        life_span,
-        temperament,
-        image,
-    } = req.body;
-    const createDog = await Dog.create({
-        name:name,
-        height_min: height_min,
-        height_max: height_max,
-        weight_min: weight_min,
-        weight_max: weight_max,
-        life_span: life_span,
-        temperament: temperament,
-        image: image,
-    });
-    if(createDog){
-        res.status(200).json(createDog);
-    }else{
-    res.status(500).send('uncreated dog')
-    }
-});
+})
 
 module.exports = router;
