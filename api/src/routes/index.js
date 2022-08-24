@@ -13,7 +13,7 @@ const router = Router();
 /*  - [ X ] __GET /dogs__:
         - Obtener un listado de las razas de perro
         - Debe devolver solo los datos necesarios para la ruta principal
-    - [ ] __GET /dogs?name="..."__:
+    - [ X ] __GET /dogs?name="..."__:
         - Obtener un listado de las razas de perro que contengan la palabra ingresada como query parameter
         - Si no existe ninguna raza de perro mostrar un mensaje adecuado
     - [ X ] __GET /dogs/{idRaza}__:
@@ -75,13 +75,14 @@ router.get("/dogs", async (req, res) => {
         res.status(200).json(allBreeds);
     } else {
         const filtrados = allBreeds.filter((e) => {
-            const listName = e.name.toUpperCase();
-            if (listName.includes(name.toUpperCase())) return listName;
+        const names = e.name.toUpperCase();
+        if (names.includes(name.toUpperCase())) return names;
         });
-        filtrados.length ? res.status(200).json(filtrados) : res.status(400).send("Raza no encontrada");
+        filtrados.length 
+        ? res.status(200).json(filtrados)
+        : res.status(400).send("Raza no encontrada");
     }
-});
-
+}); 
 
 
 router.get('/temperaments', async (req, res)=>{
@@ -158,5 +159,17 @@ router.get('/dogs/:idRaza', async (req, res) => {
         res.status(404).send(error)
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
