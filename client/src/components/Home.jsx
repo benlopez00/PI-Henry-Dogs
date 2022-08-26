@@ -20,7 +20,7 @@ export default function Home (){
     return(
         <div>
             <Link to='/dogs'>Crear Perro</Link>
-            <button onClick={e=>{handleClick(e)}}>Volver a cargar todos los perros</button>
+            <button onClick={(e)=>{handleClick(e)}}>Volver a cargar todos los perros</button>
             <div>
                 <select>
                     <option value="alfAsc">Alfabetico Ascendente</option>
