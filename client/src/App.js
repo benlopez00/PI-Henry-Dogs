@@ -9,12 +9,12 @@ import styles from './App.module.css'
 function App() {
     return (
         <BrowserRouter>
-            <div className={styles.Guille}>
-            <Route exact path='/' component={LandingPage} />
-            <Route path='/home' component={Home} />
-            <Route path='/dogs/:id' component={DogDetail}/>
-            <Route path='/newDog/' component={DogCreation}/>
-            <Route path='/about' component={About}/>
+            <div className={styles.weHappy}>
+                <Route exact path='/' component={LandingPage} />
+                <Route path='/home' component={Home} />
+                <Route path='/dogs/:id' component={DogDetail}/>
+                <Route path='/newDog/' component={DogCreation}/>
+                <Route path='/about' component={About}/>
             </div>
         </BrowserRouter>
     );

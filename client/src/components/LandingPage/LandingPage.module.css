@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,800;1,900&family=Ranchers&family=Roboto+Mono:wght@500&display=swap');
+/* font-family: 'Lato', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Ranchers', cursive;
+font-family: 'Roboto Mono', monospace; 
+#FBE1B7
+*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color:#FBE1B7;
+  position: relative;
+  overflow: hidden;
+}
+.pretitle{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+.title{
+  font-size: 70px;
+  color: black;
+  font-family: 'Playfair Display', serif;;
+}
+
+.gif{
+  height: 150px;
+  width: 200px;
+}
+
+.botIn {
+  margin: 50px;
+  color: #090909;
+  height: 50px;
+  width: 200px;
+  padding: 10px 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #FBE1B7;
+  border: 1px solid #FBE1B7;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #b4a48c,-6px -6px 12px #ffeed3;
+}
+.botIn:hover {
+  border: 1px solid white;
+}
+.botIn:active {
+  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}

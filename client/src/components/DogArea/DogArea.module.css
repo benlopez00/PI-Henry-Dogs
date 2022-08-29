@@ -1,0 +1,10 @@
+.dogsArea{
+    grid-area: area;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pagination{
+    min-width: 100%;
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,800;1,900&family=Ranchers&family=Roboto+Mono:wght@500&display=swap');
+/* font-family: 'Lato', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Ranchers', cursive;
+font-family: 'Roboto Mono', monospace; 
+--wheat: #fbe1b7ff
+--black: #000000ff
+--united-nations-blue: #5a8ce3ff
+--medium-aquamarine: #3ddc97ff
+--fire-opal: #e3655bff
+*/
+
+.side {
+	grid-area: filter;
+    display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.sideOrder{
+	display: flex;
+    flex-direction: column;
+	width: 15vw;
+	height: 80vh;
+    background-color: rgb(18, 42, 41);
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    min-width: 200px;
+    height: fit-content;
+}
+
+h5{
+	font-family: 'Roboto Mono', monospace;
+	font-size: 15px;
+	font-weight: 200;
+}
+
+.sideBarHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.header {
+    margin: 0 10px;
+}
+.refresh:hover {
+    color: white;
+    background-color: #454545;
+    cursor: pointer;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tooltip .tooltiptext {
+    font-size: 18px;
+    top: -05px;
+    left: 120%;
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    z-index: 1;
+}
+
+.filterSection {
+    margin: 8px 5px;
+}
+
+.filterHeader {
+    margin-bottom: 2%;
+}
+
+select {
+    width: 100%;
+}
+
+.addDog {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.addDog > a >span {
+    font-size: 40px;
+}
+
+option {
+    line-height: 1.5;
+}

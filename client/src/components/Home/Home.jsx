@@ -6,13 +6,13 @@ import NavBar from "../NavBar/NavBar";
 import styles from './Home.module.css'
 
 export default function Home() {
-  return (
-    <Fragment>
-      <div className={styles.mainContainer}>
-        <NavBar />
-        <SideBar />
-        <DogArea />
-      </div>
-    </Fragment>
-  );
+    return (
+        <Fragment>
+            <div className={styles.mainContainer}>
+                <NavBar />
+                <DogArea />
+                <SideBar />
+            </div>
+        </Fragment>
+    );
 }
